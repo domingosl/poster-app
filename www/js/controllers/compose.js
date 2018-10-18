@@ -5,7 +5,7 @@ angular.module('poster').controller('compose', function ($scope, $state, $stateP
     recipients: []
   };
 
-  $scope.$on('$ionicView.afterEnter', function() {
+  $scope.$on('$ionicView.beforeEnter', function() {
 
     helper.loader.on();
 

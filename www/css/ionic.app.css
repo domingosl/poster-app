@@ -10001,7 +10001,8 @@ a {
 .fixed-dark-bar {
   background: #3e4048;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  text-align: right; }
+  text-align: right;
+  border: none; }
   .fixed-dark-bar .title {
     color: white; }
   .fixed-dark-bar button, .fixed-dark-bar button:hover {
