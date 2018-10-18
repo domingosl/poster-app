@@ -1,0 +1,37 @@
+<ion-view view-title="Accedi">
+
+
+
+  <ion-content class="login dark-section padding" scroll="true">
+    <ng-include src="'templates/partials/clean-bar.html'"></ng-include>
+
+    <h1>Nuovo utente</h1>
+
+
+    <div class="list">
+      <label class="item item-input item-floating-label no-border">
+        <span class="input-label">Nome</span>
+        <input type="text" placeholder="Nome" ng-model="formData.firstName">
+      </label>
+      <label class="item item-input item-floating-label no-border">
+        <span class="input-label">Cognome</span>
+        <input type="text" placeholder="Cognome" ng-model="formData.lastName">
+      </label>
+      <label class="item item-input item-floating-label no-border">
+        <span class="input-label">Email</span>
+        <input type="email" placeholder="Email"  ng-model="formData.email">
+      </label>
+      <label class="item item-input item-floating-label no-border">
+        <span class="input-label">Password</span>
+        <input type="password" placeholder="Password"  ng-model="formData.password">
+      </label>
+    </div>
+
+    <div class="spacer20"></div>
+
+    <a ng-click="doUserRegistration()" class="button button-dark button-block button-large">
+      REGISTRATI
+    </a>
+
+  </ion-content>
+</ion-view>

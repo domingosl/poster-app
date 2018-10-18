@@ -1,0 +1,34 @@
+<ion-view view-title="Nuovo messaggio">
+  <ion-content class="min-padding">
+    <div class="list">
+
+      <label class="item item-input compose-item">
+        <span class="input-label">Da</span>
+        <div class="pill">{{formData.userFullName}}</div>
+      </label>
+
+      <label class="item item-input item-select compose-item">
+        <div class="input-label">
+          Per
+        </div>
+
+        <!--<select
+        ng-options="recipient as recipient.firstName + ' ' + recipient.lastName for recipient in formData.recipients track by recipient._id"
+        ng-model="formData.recipient" ng-change="recipientUpdate()"></select>-->
+
+        <span class="pill">{{formData.recipient.firstName}}</span>
+
+      </label>
+
+
+      <label class="item item-input compose-item">
+        <input type="text" placeholder="Oggetto" class="hor-padding-20">
+      </label>
+
+      <textarea message-body class="message-area" style="resize: none;" placeholder="Scrivi il messaggio"></textarea>
+
+
+
+    </div>
+  </ion-content>
+</ion-view>

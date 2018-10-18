@@ -1,26 +1,132 @@
-// Ionic Starter App
+angular.module('poster', ['ionic', 'ngFx'])
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+  .config(function ($stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider ) {
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs).
-    // The reason we default this to hidden is that native apps don't usually show an accessory bar, at
-    // least on iOS. It's a dead giveaway that an app is using a Web View. However, it's sometimes
-    // useful especially with forms, though we would prefer giving the user a little more room
-    // to interact with the app.
-    if (window.cordova && window.Keyboard) {
-      window.Keyboard.hideKeyboardAccessoryBar(true);
-    }
+    //$locationProvider.html5Mode(true);
+    $urlRouterProvider.otherwise('/welcome');
+    $ionicConfigProvider.backButton.text('');
 
-    if (window.StatusBar) {
-      // Set the statusbar to use the default style, tweak this to
-      // remove the status bar on iOS or change it to use white instead of dark colors.
-      StatusBar.styleDefault();
-    }
+    $stateProvider
+      .state('welcome',
+        {
+          url: '/welcome',
+          templateUrl: 'templates/welcome.html',
+          controller: 'welcome'
+        })
+      .state('login',
+        {
+          url: '/login',
+          templateUrl: 'templates/login.html',
+          controller: 'login'
+        })
+      .state('userRegistration',
+        {
+          url: '/user-registration',
+          templateUrl: 'templates/registration.html',
+          controller: 'userRegistration'
+        })
+      .state('main',
+        {
+          abstract: true,
+          cache: false,
+          url: '/main',
+          templateUrl: 'templates/main.html',
+          controller: 'main'
+        }
+      )
+      .state('main.messages',
+      {
+        url: '/messages',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/messages.html',
+            controller: ''
+          }
+        }
+      }
+    )
+      .state('main.drafts',
+        {
+          url: '/drafts',
+          views: {
+            'menuContent': {
+              templateUrl: 'templates/drafts.html',
+              controller: ''
+            }
+          }
+        }
+      )
+
+      .state('main.recipients',
+        {
+          url: '/recipients',
+          views: {
+            'menuContent': {
+              templateUrl: 'templates/recipients.html',
+              controller: ''
+            }
+          }
+        }
+      )
+      .state('main.recipient',
+        {
+          url: '/recipient',
+          views: {
+            'menuContent': {
+              templateUrl: 'templates/recipient.html',
+              controller: 'recipient'
+            }
+          }
+        }
+      )
+      .state('main.compose',
+        {
+          url: '/compose',
+          params: { recipient: null },
+          views: {
+            'menuContent': {
+              templateUrl: 'templates/compose.html',
+              controller: 'compose'
+            }
+          }
+        }
+      )
+
+  })
+  .run(function ($ionicPlatform, api, $ionicPopup, helper) {
+
+    $ionicPlatform.ready(function () {
+      if (window.cordova && window.Keyboard) {
+        window.Keyboard.hideKeyboardAccessoryBar(true);
+      }
+
+      if (window.StatusBar) {
+        StatusBar.styleDefault();
+      }
+
+    });
+
+    var alertMsg = function (response) {
+      $ionicPopup.alert({
+        title: 'Errore',
+        template: response.message
+      })
+    };
+
+    api.initialize({
+      env: helper.getAppEnv(),
+      errorHandlers: {
+        401: function () {
+          console.log("drop session!");
+        },
+        403: alertMsg,
+        429: alertMsg,
+        500: function () {
+          alertMsg("Errore!!!")
+        },
+
+      }
+    });
+
+
   });
-})

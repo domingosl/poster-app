@@ -1,0 +1,35 @@
+<ion-view view-title="Destinatario">
+  <ion-content class="padding light-section">
+
+    <div class="spacer10"></div>
+    <p>Aggiungi un amico/parente, basta specificare l'istituto di reclusione, nome e cognome.</p>
+
+    <div class="list">
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Istituto</span>
+        <input type="text" placeholder="Istituto" ng-model="formData.jail.name" readonly ng-click="jailsModal.show()">
+        <span class="form-error">{{formErrors.jail}}</span>
+      </label>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Nome</span>
+        <input type="text" placeholder="Nome" ng-model="formData.firstName">
+        <span class="form-error">{{formErrors.firstName}}</span>
+      </label>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Cognome</span>
+        <input type="text" placeholder="Cognome" ng-model="formData.lastName">
+        <span class="form-error">{{formErrors.lastName}}</span>
+      </label>
+
+      <div class="spacer20"></div>
+      <a ng-click="doSaveRecipient()" class="button button-dark button-block button-large">
+        SALVA
+      </a>
+      <div class="spacer20"></div>
+
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,61 @@
+<ion-modal-view ng-controller="user">
+
+  <ion-content class="dark-section padding">
+
+    <div class="clean-bar">
+      <button ng-click="userModal.hide()" class="button icon ion-arrow-down-c"></button>
+    </div>
+
+    <div class="list">
+
+      <h2>Dati anagrafici</h2>
+      <p>Questi dati vengono usati nelle lettere.</p>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Nome</span>
+        <input type="text" placeholder="Nome" ng-model="formData.firstName">
+        <span class="form-error">{{formErrors.firstName}}</span>
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Cognome</span>
+        <input type="text" placeholder="Cognome" ng-model="formData.lastName">
+        <span class="form-error">{{formErrors.lastName}}</span>
+      </label>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Indirizzo</span>
+        <input type="text" placeholder="Indirizzo" ng-model="formData.address">
+        <span class="form-error">{{formErrors.address}}</span>
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Cità</span>
+        <input type="text" placeholder="Cità" ng-model="formData.addressCity">
+        <span class="form-error">{{formErrors.addressCity}}</span>
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Regione</span>
+        <input type="text" placeholder="Regione" ng-model="formData.addressRegion">
+        <span class="form-error">{{formErrors.addressRegion}}</span>
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">CAP</span>
+        <input type="number" placeholder="CAP" ng-model="formData.addressCode">
+        <span class="form-error">{{formErrors.addressCode}}</span>
+      </label>
+
+    </div>
+
+    <div class="spacer20"></div>
+
+    <a ng-click="doUpdateUser()" class="button button-dark button-block button-large">
+      AGGIORNA
+    </a>
+
+    <div class="text-center">
+      <a ng-click="changePasswordPopup()">cambia la password</a>
+    </div>
+
+
+  </ion-content>
+
+</ion-modal-view>

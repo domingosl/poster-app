@@ -1,0 +1,235 @@
+@import "welcome";
+@import "login";
+
+$bar-height: 110px;
+
+a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.in-section {
+  font-weight: bold;
+}
+
+.env-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  color: #666;
+  font-size: 10px;
+  text-align: center;
+}
+
+.no-border {
+  border: none;
+}
+
+.compose-item {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+}
+
+.spacer10 {
+  padding: 20px 0;
+}
+
+.spacer20 {
+  padding: 20px 0;
+}
+
+.hor-padding-20 {
+  padding: 0 20px !important;
+}
+
+.form-error {
+  font-size: 12px;
+  color: $assertive;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
+.small-link {
+  font-size: 14px;
+  color: #ddd;
+  font-weight: 400;
+}
+
+.float-button {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  border-radius: 50%;
+  background-color: #ef473a;
+  padding: 12px 17px;
+  color: white;
+  font-size: 30px;
+  width: 55px;
+  height: 55px;
+}
+
+
+
+
+.light-section {
+
+  input {
+    color: #666 !important;
+  }
+
+  input[type=text], input[type=password], input[type=email], input[type=number] {
+    border-bottom: 1px solid #ddd;
+  }
+
+  input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus {
+    border-bottom: 1px solid $energized;
+  }
+
+  .input-label, p, h1, h2, h3 {
+    color: #666;
+  }
+
+  .button {
+    color: white;
+  }
+
+}
+
+.dark-section {
+  color: #fff;
+  background: #454a57; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #454a57 0%, #3a3a3f 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #454a57 0%,#3a3a3f 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #454a57 0%,#3a3a3f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#454a57', endColorstr='#3a3a3f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  input {
+    color: #fff !important;
+  }
+
+  input[type=text], input[type=password], input[type=email], input[type=number] {
+    border-bottom: 1px solid #fff;
+  }
+
+  input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus {
+    border-bottom: 1px solid $energized;
+  }
+
+  .input-label, p, h1, h2, h3, .button {
+    color: #fff;
+  }
+
+  .item {
+    background-color: transparent;
+    color: white;
+    font-weight: 300;
+    border: none;
+  }
+  .item-complex .item-content, .item-radio .item-content {
+    background-color: transparent;
+    font-weight: 300;
+  }
+
+  .jail-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    p {
+      font-size: 10px;
+    }
+
+  }
+}
+
+.padding {
+  padding: 20px 50px !important;
+}
+
+.menu-padding {
+  padding: 20px 10px !important;
+}
+
+.min-padding {
+  padding: 5px 0 10px 0 !important;
+
+  .item-input {
+    padding: 2px 0;
+  }
+
+  .input-label {
+    padding: 7px 10px 7px 20px;
+  }
+
+}
+
+.fixed-dark-bar {
+
+  background: #3e4048;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+  text-align: right;
+
+  .title {
+    color: white;
+  }
+
+  button, button:hover {
+    padding: 0 !important;
+    background: transparent !important;
+    color: #fff !important;
+    border: none !important;
+    top: 7px !important;
+    right: 7px !important;
+    position: absolute;
+  }
+
+  button.icon:before {
+    font-size: 25px !important;
+  }
+
+}
+
+.clean-bar {
+
+  background: transparent;
+  height: $bar-height;
+  position: relative;
+  padding: 30px 0 0 0;
+
+  button, button:hover {
+    padding: 0 !important;
+    background: transparent !important;
+    color: #fff !important;
+    border: none !important;
+    text-align: left;
+  }
+
+  button.icon:before {
+    font-size: 30px !important;
+  }
+
+}
+
+textarea.message-area {
+
+  width: 100%;
+  padding: 10px 20px;
+
+}
+
+.pill {
+  background: rgba(52, 66, 103, 0.79);
+  color: #fff;
+  border-radius: 15px;
+  line-height: 30px;
+  overflow: hidden;
+  font-size: 15px;
+  padding: 0 10px;
+}
+
+.round-image {
+  border-radius: 50%;
+}

@@ -1,0 +1,37 @@
+<ion-view view-title="Accedi">
+
+  <ion-content class="login dark-section padding">
+
+    <ng-include src="'templates/partials/clean-bar.html'"></ng-include>
+
+
+    <h1>ACCEDI</h1>
+
+
+    <div class="list">
+      <label class="item item-input item-floating-label no-border">
+        <span class="input-label">Email</span>
+        <input type="email" placeholder="Email" ng-model="formData.email">
+        <span class="form-error">{{formErrors.email}}</span>
+      </label>
+
+
+      <label class="item item-input item-floating-label no-border">
+        <span class="input-label">Password</span>
+        <input type="password" placeholder="Password" ng-model="formData.password">
+        <span class="form-error">{{formErrors.password}}</span>
+      </label>
+
+    </div>
+
+    <div class="spacer20"></div>
+
+    <a ng-click="doLogin()" class="button button-dark button-block button-large">
+      ACCEDI
+    </a>
+    <div class="text-center">
+      <a ng-click="openResetPasswordModal()" class="small-link">Non ricordi la password?</a>
+    </div>
+
+  </ion-content>
+</ion-view>

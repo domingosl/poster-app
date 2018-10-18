@@ -1,0 +1,17 @@
+<ion-view view-title="Destinatari">
+  <ion-content>
+
+    <div class="list">
+
+      <a ng-repeat="recipient in formData.recipients" class="item item-avatar" href="#">
+        <img ng-src="{{genAvatar(recipient, 100, '#ffffff', '#000000', 'Sans serif', 300)}}">
+        <h2>{{recipient.firstName + " " + recipient.lastName}}</h2>
+        <p>{{recipient.jail.name}}</p>
+      </a>
+
+
+    </div>
+
+  </ion-content>
+
+</ion-view>

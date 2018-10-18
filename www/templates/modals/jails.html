@@ -1,0 +1,25 @@
+<ion-modal-view ng-controller="jails">
+
+  <div class="bar fixed-dark-bar">
+    <div class="title title-center header-item" style="left: 48px; right: 48px;">Scegli uno</div>
+    <button ng-click="jailsModal.hide()" class="button icon ion-close"></button>
+  </div>
+
+  <ion-content class="dark-section has-header">
+
+
+
+    <div class="list">
+
+      <a ng-repeat="jail in jails" class="item jail-item" href="" ng-click="selectJail(jail)">
+        <h2>{{jail.shortName}}</h2>
+        <h3>{{jail.name.replace(jail.shortName + " - ", "")}}</h3>
+        <p>{{jail.postalAddress}}</p>
+      </a>
+
+
+    </div>
+
+  </ion-content>
+
+</ion-modal-view>

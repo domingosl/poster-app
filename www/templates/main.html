@@ -1,0 +1,42 @@
+<ion-side-menus enable-menu-with-back-views="false">
+
+  <ion-side-menu-content>
+
+    <ion-nav-bar class="bar-dark">
+      <ion-nav-back-button></ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-nav-view name="menuContent"></ion-nav-view>
+
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+
+    <ion-content class="dark-section menu-padding">
+
+
+      <div class="item item-avatar no-border" menu-close>
+        <img ng-click="userModal.show()" ng-src="{{genAvatar(user, 100)}}">
+        <h2 ng-click="userModal.show()">{{user.firstName}} {{user.lastName}}</h2>
+        <p>
+          <small><a ng-click="confirmLogout()">Esci</a></small>
+        </p>
+      </div>
+
+      <br/>
+
+      <ul>
+        <li><a ui-sref="main.messages" ng-class="{'in-section': stateName === 'main.messages'}" menu-close class="button icon-left ion-ios-email-outline button-clear">Posta Inviata</a></li>
+        <li><a ui-sref="main.drafts" ng-class="{'in-section': stateName === 'main.drafts'}" menu-close class="button icon-left ion-ios-filing-outline button-clear">Bozze</a></li>
+        <li><a ui-sref="main.recipients" ng-class="{'in-section': stateName === 'main.recipients'}" menu-close class="button icon-left ion-ios-at-outline button-clear">Destinatari</a></li>
+      </ul>
+
+    </ion-content>
+
+  </ion-side-menu>
+</ion-side-menus>

@@ -1,0 +1,26 @@
+<ion-view view-title="Benvenuto">
+  <ion-content class="welcome padding" scroll="false">
+
+    <img ng-show="ui.showLogo" class="logo fx-zoom-normal fx-speed-800" src="img/logo.png" />
+
+    <h1>Le tue parole sono la mia forza</h1>
+
+
+    <div id="footer">
+
+      <div ng-show="ui.showFooter" class="fx-zoom-normal fx-speed-800">
+        <a ui-sref="login" class="button button-positive button-block button-large">
+          ACCEDI
+        </a>
+        <p class="access">Non hai un conto? <a ui-sref="userRegistration">Registrati</a></p>
+      </div>
+
+      <div ng-show="!ui.showFooter">
+        <ion-spinner icon="spiral"></ion-spinner>
+      </div>
+
+    </div>
+
+  </ion-content>
+  <div class="env-text" ng-click="changeEnv()">{{ui.env}}</div>
+</ion-view>

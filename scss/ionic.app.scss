@@ -1,19 +1,21 @@
-/*
-To customize the look and feel of Ionic, you can override the variables
-in ionic's _variables.scss file.
-
-For example, you might change some of the default colors:
-
 $light:                           #fff !default;
 $stable:                          #f8f8f8 !default;
-$positive:                        #387ef5 !default;
+$positive:                        #E91E63 !default;
 $calm:                            #11c1f3 !default;
 $balanced:                        #33cd5f !default;
 $energized:                       #ffc900 !default;
 $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
-$dark:                            #444 !default;
-*/
+$dark:                            #21242C !default;
+
+
+
+$base-color: #3E3B4D;
+$font-family-sans-serif:           'Montserrat', sans-serif !default;
+$font-family-light-sans-serif:     'Montserrat', sans-serif-light !default;
+$font-size-base:                  16px !default;
+$font-size-large:                 26px !default;
+$font-size-small:                 14px !default;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
@@ -21,3 +23,59 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+@import "styles";
+
+.button.icon-left:before {
+  float: left;
+  padding-right: 15px;
+  padding-left: 0;
+}
+
+.button .icon:before, .button.icon-left:before, .button.icon-right:before, .button.icon:before {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.bar .buttons.pull-right, .bar .title+.button:last-child, .bar .title+.buttons, .bar>.button+.button:last-child, .bar>.button.pull-right {
+  top: 2px;
+  font-size: 40px;
+  padding-right: 5px;
+}
+
+.popup-container .popup {
+
+  background-color: white;
+  width: 330px;
+
+  input {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+}
+
+.item-select {
+
+  select {
+    padding-left: 5px;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    direction: unset;
+    border-radius: 0;
+  }
+
+}
+
+.input-label {
+  width: auto;
+}
+
+.button.icon-left:before {
+  width: 35px;
+}
+
+input[disabled], input[readonly]:not(.cloned-text-input), select[disabled], select[readonly], textarea[disabled], textarea[readonly]:not(.cloned-text-input) {
+  background-color: transparent;
+  cursor: pointer;
+}
