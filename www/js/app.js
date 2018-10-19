@@ -1,4 +1,4 @@
-angular.module('poster', ['ionic', 'ngFx'])
+angular.module('poster', ['ionic', 'ngFx', 'ngFileUpload'])
 
   .config(function ($stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider ) {
 

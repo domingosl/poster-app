@@ -1,11 +1,41 @@
-angular.module('poster').controller('compose', function ($scope, $state, $stateParams, api, helper) {
+angular.module('poster').controller('compose', function ($scope, $state, $stateParams, api, helper, $window, Upload) {
 
   $scope.formData = {
     userFullName: $scope.user.firstName + " " + $scope.user.lastName,
     recipients: []
   };
 
-  $scope.$on('$ionicView.beforeEnter', function() {
+  $scope.formData.totalChars = 5000;
+  $scope.formData.charsLeft = $scope.formData.totalChars;
+
+  $scope.updateCharsLeft = function () {
+    $scope.formData.charsLeft = $scope.formData.totalChars - $scope.formData.body.length;
+  };
+
+  $scope.getFile = function (file, id) {
+    console.log(file, id);
+
+    Upload.upload({
+      url: api.getFullUrl('saveMessageImage', []),
+      data: {file: file}
+    })
+      .then(
+        function (resp) {
+          console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+        },
+        function (resp) {
+          console.log('Error status: ' + resp.status);
+        },
+        function (evt) {
+          var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+          console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+        });
+
+  };
+
+  angular.element(document.querySelector('#message-body')).css('height', $window.innerHeight - 275 + "px");
+
+  $scope.$on('$ionicView.beforeEnter', function () {
 
     helper.loader.on();
 
@@ -14,8 +44,8 @@ angular.module('poster').controller('compose', function ($scope, $state, $stateP
 
         helper.loader.off();
 
-        if(recipients.length === 0) {
-          if($scope.prevStateName !== 'main.recipient')
+        if (recipients.length === 0) {
+          if ($scope.prevStateName !== 'main.recipient')
             return $state.go('main.recipient');
           else
             return $state.go('main.messages');
@@ -40,7 +70,7 @@ angular.module('poster').controller('compose', function ($scope, $state, $stateP
 
 
   $scope.recipientUpdate = function () {
-    if($scope.formData.recipient._id === 'add')
+    if ($scope.formData.recipient._id === 'add')
       $state.go('main.recipient');
   };
 

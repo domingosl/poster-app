@@ -127,6 +127,7 @@ angular.module('poster').service('api', function (
   methods.add('getJails', '/jails');
   methods.add('getRecipients', '/recipients');
   methods.add('setRecipient', '/recipients');
+  methods.add('saveMessageImage', '/message-image');
 
 
   var RequestClass = function (method, args) {

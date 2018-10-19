@@ -25,10 +25,26 @@
         <input type="text" placeholder="Oggetto" class="hor-padding-20">
       </label>
 
-      <textarea message-body class="message-area" style="resize: none;" placeholder="Scrivi il messaggio"></textarea>
+      <textarea maxlength="{{formData.totalChars}}" id="message-body" class="message-area" placeholder="Scrivi il messaggio" ng-model="formData.body" ng-change="updateCharsLeft()"></textarea>
+      <p class="chars-count">{{formData.charsLeft}} caratteri disponibili</p>
+      <div class="options-bar">
 
+        <!--<a ng-click="" class="button button-assertive button-clear">Allega una foto</a>-->
+
+        <div class="upload choose-photo">
+          <span><i class="wicon-edit"></i>Allega una foto</span>
+          <input type="file" file-upload="onFileSelect($files)"/>
+        </div>
+
+        <a ng-click="sendMessage()" class="button button-dark">
+          Invia
+        </a>
+
+      </div>
 
 
     </div>
+
   </ion-content>
+
 </ion-view>
